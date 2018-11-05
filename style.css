@@ -1,0 +1,64 @@
+body{
+    margin: 0 ;
+    padding: 0;
+    height: 100vh;
+    text-align: center;
+    background-color: cadetblue;
+    font-family: 'Amatic SC', cursive;
+    color: black;
+}
+h1{
+    font-size: 50px;
+}
+span{
+    background-color: aliceblue;
+    opacity: 0.5 ;
+    border-radius: 20px 30px 10px 20px;
+}
+button{
+    border: pink 2px solid;
+    border-radius: 10px 10px 10px 10px;
+    background-color: aliceblue;
+    font-family: 'Amatic SC', cursive;
+    font-size: 30px;
+    cursor: pointer;
+}
+.game-container{
+    width: 600px;
+    height: 300px;
+    left: 19%;
+    right: 19%;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: absolute;
+    border: pink 2px solid;
+    align-content: stretch;
+}
+.field{
+    width: 33.3333%;
+    text-align: center;
+}
+
+img{
+    background: bottom center no-repeat;
+    position: relative;
+    margin-right: 30%;
+    top: 70px;
+    height: 80px;
+    width: 200px;
+}
+.mrbump{
+    background: url('mrbump.png') bottom center no-repeat;
+    background-size: 60%;
+    position: absolute;
+    width: 190px;
+    height: 140px;
+    transition:all 0.4s;
+    overflow: hidden;
+}
+.field.up .mrbump{
+    top: 0;
+}
