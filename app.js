@@ -1,36 +1,36 @@
 const holes = document.querySelectorAll('.field');
 const scoreBoard = document.querySelector('.score');
-const mrBump = document.querySelectorAll('.mrbump');
+const mrBumps = document.querySelectorAll('.mrbump');
 let score = 0;
 let timeUp = false;
 let lastHole;
+let prevNum = -1;
 
-
-
-
-function randomHole(){
-    let randIntHole = Math.floor(Math.random() * 6 ) + 1;
-    let field = holes[idx];
-    score += randIntNum ;
-
-    if (hole == lastHole){
-        return randIntHole(field);
-    }
-
+function startGame() {
+    timeUp = false;
+    score = 0;
+    let intervalId = setInterval(newBump, 3000);
+    setTimeout(endGame, 30000, intervalId);
 }
 
-function show(){
-    let time =  randomTime(200, 1000);
+function newBump() {
+    let randBump = Math.floor(Math.random() * 6);
     
+    if(randBump == prevNum) {
+        console.log("duplicate");
+        newBump()
+    } else {
+        mrBumps[randBump].style.visibility = "visible";
+    }
+    prevNum = randBump;
+    setTimeout(reset, 2500, randBump);
 }
 
+function reset(randBump) {
+    mrBumps[randBump].style.visibility = "hidden";
+}
 
-
-
-
-function randomTime(min, max) {
-    return Math.round(Math.random() * (max - min) + min);
-  }
-function addHtml (id, value){
-    document.getElementById(id).innerHTML= value;
+function endGame(intervalId) {
+    alert('Time Up!');
+    clearInterval(intervalId);
 }
