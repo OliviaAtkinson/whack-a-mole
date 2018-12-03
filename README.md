@@ -1,1 +1,1 @@
-# whack a mole
+# whack mr bump game
