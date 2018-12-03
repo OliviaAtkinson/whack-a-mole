@@ -26,12 +26,13 @@ function newBump() {
         mrBumps[randBump].style.visibility = "visible";
     }
     prevNum = randBump;
-    setTimeout(reset, 500, randBump);
+    setTimeout(resetGame, 500, randBump);
 }
 //new bumb, randomly chooses 
 
-function reset(randBump) {
+function resetGame(randBump) {
     mrBumps[randBump].style.visibility = "hidden";
+    startGame();
 }
 //after showing mr bumb, the visibility resets after a certain ammount of time which is shown in the new bumb function.
 
